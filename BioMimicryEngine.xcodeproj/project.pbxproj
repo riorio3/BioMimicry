@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001 /* BioMimicryEngineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101; };
-		002 /* RetroTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102; };
-		003 /* RetroComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103; };
-		005 /* GeneratedDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105; };
-		006 /* NovelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106; };
-		008 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108; };
-		009 /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109; };
-		010 /* GeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110; };
-		011 /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111; };
-		012 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112; };
-		013 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113; };
-		014 /* DesignDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114; };
-		015 /* STLExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115; };
-		016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116; };
-		017 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117; };
-		018 /* StructuralProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118; };
+		001 /* BioMimicryEngineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101 /* BioMimicryEngineApp.swift */; };
+		002 /* RetroTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102 /* RetroTheme.swift */; };
+		003 /* RetroComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103 /* RetroComponents.swift */; };
+		005 /* GeneratedDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105 /* GeneratedDesign.swift */; };
+		006 /* NovelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106 /* NovelGenerator.swift */; };
+		008 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108 /* StorageService.swift */; };
+		009 /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109 /* GeneratorView.swift */; };
+		010 /* GeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110 /* GeneratorViewModel.swift */; };
+		011 /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111 /* SceneKitView.swift */; };
+		012 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112 /* GalleryView.swift */; };
+		013 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113 /* GalleryViewModel.swift */; };
+		014 /* DesignDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114 /* DesignDetailView.swift */; };
+		015 /* STLExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115 /* STLExporter.swift */; };
+		016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116 /* Assets.xcassets */; };
+		017 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117 /* Preview Assets.xcassets */; };
+		018 /* StructuralProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118 /* StructuralProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,7 +188,7 @@
 /* Begin PBXNativeTarget section */
 		400 /* BioMimicryEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 403;
+			buildConfigurationList = 403 /* Build configuration list for PBXNativeTarget "BioMimicryEngine" */;
 			buildPhases = (
 				401 /* Sources */,
 				200 /* Frameworks */,
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 501;
+			buildConfigurationList = 501 /* Build configuration list for PBXProject "BioMimicryEngine" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -400,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BioMimicryEngine/Preview Content\"";
+				DEVELOPMENT_TEAM = H7FZM983G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -428,6 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BioMimicryEngine/Preview Content\"";
+				DEVELOPMENT_TEAM = H7FZM983G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -451,20 +453,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		501 /* Build configuration list for PBXProject "BioMimicryEngine" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				600 /* Debug */,
-				601 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		403 /* Build configuration list for PBXNativeTarget "BioMimicryEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				602 /* Debug */,
 				603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		501 /* Build configuration list for PBXProject "BioMimicryEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				600 /* Debug */,
+				601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

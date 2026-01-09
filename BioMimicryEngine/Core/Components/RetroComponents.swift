@@ -44,6 +44,8 @@ struct RetroButton: View {
                 } else {
                     Text("[ \(title) ]")
                         .font(RetroTheme.terminalFont(16))
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
                 }
             }
             .foregroundColor(isPressed ? RetroTheme.background : RetroTheme.primaryGreen)

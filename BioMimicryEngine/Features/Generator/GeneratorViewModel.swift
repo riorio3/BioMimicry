@@ -90,9 +90,19 @@ class GeneratorViewModel: ObservableObject {
 
     func exportSTL() {
         guard let design = currentDesign else { return }
-        if let url = STLExporter.shared.exportSTL(design: design) {
-            shareURL = url
-            showingShareSheet = true
+
+        isGenerating = true
+
+        Task.detached { [weak self] in
+            let url = STLExporter.shared.exportSTL(design: design)
+
+            await MainActor.run {
+                self?.isGenerating = false
+                if let url = url {
+                    self?.shareURL = url
+                    self?.showingShareSheet = true
+                }
+            }
         }
     }
 

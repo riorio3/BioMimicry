@@ -7,6 +7,7 @@ struct DesignDetailView: View {
     @State private var showingShareSheet = false
     @State private var shareURL: URL?
     @State private var mesh: MeshData?
+    @State private var isExporting = false
 
     var body: some View {
         ZStack {
@@ -176,7 +177,7 @@ struct DesignDetailView: View {
             TerminalText(text: "EXPORT OPTIONS", size: 12, color: RetroTheme.dimGreen)
 
             HStack(spacing: 12) {
-                RetroButton(title: "EXPORT STL", action: exportSTL)
+                RetroButton(title: "EXPORT STL", action: exportSTL, isLoading: isExporting)
 
                 Button(action: copyDetails) {
                     HStack(spacing: 4) {
@@ -203,9 +204,18 @@ struct DesignDetailView: View {
     }
 
     private func exportSTL() {
-        if let url = STLExporter.shared.exportSTL(design: design) {
-            shareURL = url
-            showingShareSheet = true
+        isExporting = true
+
+        Task.detached { [design] in
+            let url = STLExporter.shared.exportSTL(design: design)
+
+            await MainActor.run {
+                isExporting = false
+                if let url = url {
+                    shareURL = url
+                    showingShareSheet = true
+                }
+            }
         }
     }
 

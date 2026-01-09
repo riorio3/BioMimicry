@@ -40,9 +40,12 @@ class STLExporter {
     }
 
     private func generateSTLContent(mesh: MeshData, name: String) -> String {
-        var stl = "solid \(name)\n"
-
         let triangleCount = mesh.indices.count / 3
+
+        var lines: [String] = []
+        lines.reserveCapacity(triangleCount * 7 + 2)
+
+        lines.append("solid \(name)")
 
         for i in 0..<triangleCount {
             let idx0 = Int(mesh.indices[i * 3])
@@ -59,17 +62,18 @@ class STLExporter {
 
             let normal = calculateNormal(v0: v0, v1: v1, v2: v2)
 
-            stl += "  facet normal \(formatFloat(normal.x)) \(formatFloat(normal.y)) \(formatFloat(normal.z))\n"
-            stl += "    outer loop\n"
-            stl += "      vertex \(formatFloat(v0.x)) \(formatFloat(v0.y)) \(formatFloat(v0.z))\n"
-            stl += "      vertex \(formatFloat(v1.x)) \(formatFloat(v1.y)) \(formatFloat(v1.z))\n"
-            stl += "      vertex \(formatFloat(v2.x)) \(formatFloat(v2.y)) \(formatFloat(v2.z))\n"
-            stl += "    endloop\n"
-            stl += "  endfacet\n"
+            lines.append("  facet normal \(formatFloat(normal.x)) \(formatFloat(normal.y)) \(formatFloat(normal.z))")
+            lines.append("    outer loop")
+            lines.append("      vertex \(formatFloat(v0.x)) \(formatFloat(v0.y)) \(formatFloat(v0.z))")
+            lines.append("      vertex \(formatFloat(v1.x)) \(formatFloat(v1.y)) \(formatFloat(v1.z))")
+            lines.append("      vertex \(formatFloat(v2.x)) \(formatFloat(v2.y)) \(formatFloat(v2.z))")
+            lines.append("    endloop")
+            lines.append("  endfacet")
         }
 
-        stl += "endsolid \(name)\n"
-        return stl
+        lines.append("endsolid \(name)")
+
+        return lines.joined(separator: "\n")
     }
 
     private func calculateNormal(v0: SCNVector3, v1: SCNVector3, v2: SCNVector3) -> SCNVector3 {
