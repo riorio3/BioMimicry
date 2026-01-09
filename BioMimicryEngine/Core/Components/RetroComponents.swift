@@ -43,7 +43,7 @@ struct RetroButton: View {
                         .scaleEffect(0.8)
                 } else {
                     Text("[ \(title) ]")
-                        .font(RetroTheme.terminalFont(16))
+                        .font(RetroTheme.terminalFont(12))
                         .lineLimit(1)
                         .fixedSize(horizontal: true, vertical: false)
                 }
